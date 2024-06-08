@@ -179,8 +179,13 @@ Examples:
 */
 
 function find(arr, searchValue) {
-
+    return arr.filter(function (val) {
+        console.log(val === searchValue);
+        return val === searchValue
+    })[0];
 }
+
+/* NOTE: the function above uses [0] after the closing parenthesis to access the first element of the filtered array (the first object that matched the search criteria). If no objects match the criteria, the filter method will return an empty array, and [0] will access undefined.*/
 
 /*
 Write a function called findInObj which accepts an array of objects, a key, and some value to search for and returns the first found value in the array.
@@ -189,7 +194,11 @@ Examples:
     findInObj([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele", isCatOwner: true}], 'isCatOwner',true) // {first: 'Tim', last:"Garcia", isCatOwner: true}
 */
 
-function findInObj(arr, key, searchValue) { }
+function findInObj(arr, key, searchValue) {
+    return arr.filter(function (val) {
+        return val[key] === searchValue;
+    })[0];
+}
 
 /*
 Write a function called removeVowels which accepts a string and returns a new string with all of the vowels (both uppercased and lowercased) removed. Every character in the new string should be lowercased.
