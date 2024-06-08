@@ -6,12 +6,13 @@ Examples:
     doubleValues([5,1,2,3,10]) // [10,2,4,6,20]
 
 */
-function doubleValues(arr){
-    const updateArr = [];
-    for (let val of arr) {
+function doubleValues(arr) {
+    let updateArr = [];
+    arr.forEach(function (val) {
         updateArr.push(val * 2);
-    }
+    });
     return updateArr;
+
 }
 
 /*
@@ -22,14 +23,15 @@ Examples:
     onlyEvenValues([5,1,2,3,10]) // [2,10]
 
 */
-function onlyEvenValues(arr){
-    const updatedArr = [];
-    for (let val of arr) {
+function onlyEvenValues(arr) {
+    let updatedArr = [];
+    arr.forEach(function (val) {
         if (val % 2 === 0) {
             updatedArr.push(val);
         }
-    }
+    });
     return updatedArr;
+
 }
 
 /*
